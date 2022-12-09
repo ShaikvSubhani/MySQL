@@ -1,0 +1,14 @@
+create database sqljoins;
+show databases;
+use sqljoins;
+create table cricket (cricket_id int auto_increment, name varchar(25),primary key(cricket_id));
+create table football (football_id int auto_increment,name varchar(25),primary key(football_id));
+insert into cricket(name)
+values('stuart'),('michaael'),('johnson'),('Hayden'),('fleming');
+select * from cricket;
+insert into football(name)
+values ('stuart'),('johnson'),('hayden'),('Langer'),('Astle');
+select * from football;
+
+#to get the common players from both the tables we use inner join
+select * from cricket as c  inner join football as f on c.name=f.name;
