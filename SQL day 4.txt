@@ -1,0 +1,38 @@
+Aggregate functions
+
+1>Query the total population of all cities in CITY where District is California.
+
+select sum(population)
+from city
+where district = 'california';
+
+2>Query the average population of all cities in CITY where District is California.
+
+select avg(population)
+from city
+where district='california';
+
+3>Query the average population for all cities in CITY, rounded down to the nearest integer.
+
+select round(avg(population))
+from city;
+
+4>Query the following two values from the STATION table:
+
+The sum of all values in LAT_N rounded to a scale of  decimal places.
+The sum of all values in LONG_W rounded to a scale of  decimal places.
+
+select round(sum(lat_n),2),round(sum(long_w),2) from station
+
+5>Consider p1(a,b) and p2(c,d) to be two points on a 2D plane.
+
+ happens to equal the minimum value in Northern Latitude (LAT_N in STATION).
+ happens to equal the minimum value in Western Longitude (LONG_W in STATION).
+ happens to equal the maximum value in Northern Latitude (LAT_N in STATION).
+ happens to equal the maximum value in Western Longitude (LONG_W in STATION).
+Query the Manhattan Distance between points  and  and round it to a scale of  decimal places.
+
+select round(abs(min(lat_n)-max(lat_n)) + abs(min(long_w)-max(long_w)),4) from station
+
+
+
