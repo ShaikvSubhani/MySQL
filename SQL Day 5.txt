@@ -1,0 +1,33 @@
+Aggregate functions
+
+1>https://www.hackerrank.com/challenges/weather-observation-station-19/problem?isFullScreen=true&h_r=next-challenge&h_v=zen
+
+select round(sqrt(power(min(lat_n)-max(lat_n),2) + power(min(long_w)-max(long_w),2)),4) 
+from station
+
+2>https://www.hackerrank.com/challenges/the-pads/problem?isFullScreen=true
+
+select concat(name,'(',left(occupation,1),')')
+from occupations
+order by name;
+select concat('There are a total of ',count(occupation),' ',lower(occupation),'s.')
+from occupations
+group by occupation
+order by count(occupation);
+
+3>https://www.hackerrank.com/challenges/what-type-of-triangle/problem?isFullScreen=false
+
+select
+case
+when A + B <= C  or b+c<=a  or a+c<=b
+Then "Not A Triangle"
+when A=B and B=C
+then "Equilateral"
+when A=B or B=C or A=C
+then "Isosceles"
+else "Scalene"
+end
+from triangles
+
+
+
